@@ -33,7 +33,7 @@ public class UserRepositoryTest {
         user.setPassword("alex2020");
         user.setFullname("Alexandra");
         user.setPhone(80665534);
-        user.setLastname("Hubb");
+       
          
         User savedUser = repo.save(user);
          
