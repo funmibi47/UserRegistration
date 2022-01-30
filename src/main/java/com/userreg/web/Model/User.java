@@ -1,5 +1,7 @@
 package com.userreg.web.Model;
 
+import java.util.Random;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,10 +24,30 @@ public class User {
 	private String email;
 	 
 	@Column(nullable=false , length=14)
-	private int phone;
+	private long phone;
 	 
 	@Column(nullable=false , length=64)
 	private String password;
+	
+	@Column(nullable=false , length=64)
+	private String activation_token;
+	
+	@Column(nullable=false , length=10)
+	private boolean active;
+	
+	public String getActivation_token() {
+		return activation_token;
+	}
+	public void setActivation_token(String activation_token) {
+		this.activation_token = activation_token;
+	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	 
 	 
 	public Long getId() {
 		return id;
@@ -46,10 +68,10 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getPhone() {
+	public long getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(long phone) {
 		this.phone = phone;
 	}
 	public String getPassword() {
@@ -58,6 +80,8 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	 
 	
 	
 	

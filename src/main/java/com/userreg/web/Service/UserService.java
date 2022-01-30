@@ -22,4 +22,8 @@ public class UserService {
 	public List<User> listAll(){
 		return repo.findAll();
 		}
+	
+	public User findByActivation_token(String token) {
+		return repo.findByActivation_token(token);
+	} 
 }
